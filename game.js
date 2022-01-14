@@ -31,6 +31,8 @@ let userInputMax = 0; //highest number selected by user
 
     document.getElementById('level-button1').onclick = () => {
 
+      document.getElementById('level-button2').checked = false;
+      document.getElementById('level-button3').checked = false;
 
         userInputMax = 50;
 
@@ -38,11 +40,17 @@ let userInputMax = 0; //highest number selected by user
 
     document.getElementById('level-button2').onclick = () => {
 
+      document.getElementById('level-button1').checked = false;
+      document.getElementById('level-button3').checked = false;
+
         userInputMax = 25;
       
           };
 
           document.getElementById('level-button3').onclick = () => {
+
+            document.getElementById('level-button1').checked = false;
+            document.getElementById('level-button2').checked = false;
 
             userInputMax = 10;
           
