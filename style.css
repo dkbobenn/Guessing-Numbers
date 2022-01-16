@@ -11,8 +11,8 @@ h1 {
 }
 
 #start-button {
-    font-size: 75px;
-    background-color: #870007;
+    font-size: 60px;
+    background-color:rgb(5, 67, 130);
     color: #fff;
     padding: 20px 40px;
     border: 0;
@@ -34,10 +34,33 @@ h1 {
    height: 300px;
    width: 750px;
   font-size: 300px;
-margin-left: 495px;
+  margin-left: 495px;
   margin-top: 15px;
   padding: 50px;
-  background-color: rgba(5, 67, 130, 10);
+  background-color: rgb(5, 67, 130);
   color: white;
+}
+#gamebutton-higher {
+  font-size: 60px;
+  background-color:rgb(93, 178, 16);
+  color: white;
+  padding: 20px 40px;
+  border: 0;
+  box-shadow: 0;
+  border-radius: 5px;
+  margin-top: 35px;
+
+}
+#gamebutton-lower {
+  font-size: 60px;
+  background-color:rgb(178, 16, 58);
+  color: white;
+  padding: 20px 40px;
+  border: 0;
+  box-shadow: 0;
+  border-radius: 5px;
+  margin-top: 35px;
+
+
 }
   
