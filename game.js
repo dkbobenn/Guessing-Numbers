@@ -14,15 +14,19 @@ let levelEasyButton = document.getElementById('level-button1');
 let levelMediumButton = document.getElementById('level-button2')
 let levelHardButton = document.getElementById('level-button3');
 let startButton = document.getElementById("start-button");
+let gameBoard = document.getElementById("game-board");
+let clearNumber = document.getElementById("random-number");
+let highlowerButtons = document.getElementById("highlower-buttons");
+let introSection = document.getElementById("intro");
+
+gameBoard.hidden = true;
 
 levelEasyButton.onclick = () => {
 
-  levelMediumButton.checked = false
-  levelHardButton.checked = false
-  startButton.disabled = false
-  
-  const gameBoard = document.getElementById("game-board");
-  gameBoard.innerHTML = '';
+levelMediumButton.checked = false;
+levelHardButton.checked = false;
+  gameBoard.style.display = "block"; 
+  clearNumber.innerHTML = '';
   correctAnswers = 0;
   wrongAnswers = 0;
 
@@ -33,10 +37,8 @@ levelMediumButton.onclick = () => {
 
   levelEasyButton.checked = false
   levelHardButton.checked = false
-  startButton.disabled = false
-
-  const gameBoard = document.getElementById("game-board");
-  gameBoard.innerHTML = '';
+  gameBoard.style.display = "block"; 
+  clearNumber.innerHTML = '';
   correctAnswers = 0;
   wrongAnswers = 0;
 
@@ -47,24 +49,19 @@ levelMediumButton.onclick = () => {
 
   levelEasyButton.checked = false
   levelMediumButton.checked = false
-  startButton.disabled = false
-
-  const gameBoard = document.getElementById("game-board");
-
-  gameBoard.innerHTML = '';
+  gameBoard.style.display = "block"; 
+  clearNumber.innerHTML = '';
   correctAnswers = 0;
   wrongAnswers = 0;
 
-  userInputMax = 10;
-    
-      
+  userInputMax = 10; 
 };
 
  function getRandomInt(min, max, prevNumber) {
     min = Math.ceil(min);
     max = Math.floor(max);
     let randomNumber = prevNumber;
-    
+    //while loop added to prevent same number appearing right after each other
     while (prevNumber === randomNumber) {
       randomNumber = Math.floor(Math.random() * (max - min) + min); 
     }
@@ -72,12 +69,15 @@ levelMediumButton.onclick = () => {
    }
 
  // Start the game 
-  document.querySelector('#start-button').addEventListener('click', function () {
-  const gameBoard = document.getElementById("game-board");
-  const div = document.createElement("div");
-  gameBoard.appendChild(div)
+ document.querySelector('#start-button').addEventListener('click', function () {
+   highlowerButtons.style.display = "block";
+   introSection.style.display = "none"; 
+   startButton.style.display = 'none'
+  const number = document.getElementById("random-number");
+  const span = document.createElement("span");
+  number.appendChild(span)
   randomNumber = Math.floor(userInputMax / 2)
-  gameBoard.innerHTML = `<div id=random-number>${randomNumber}</div>`
+  number.innerHTML = `<span id=number>${randomNumber}</span>`
  });
 
 //Get the next number

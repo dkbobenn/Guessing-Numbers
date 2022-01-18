@@ -18,24 +18,26 @@
             If you guess 10 correct, you win.</strong>
             </p>
         <h2>Select level</h2>
+        <div class='radio-btn'>
         <input type="radio" id="level-button1">
         <label for="easy">Easy</label><br>  
         <input type="radio" id="level-button2">
         <label for="medium">Medium</label><br>
         <input type="radio" id="level-button3">
         <label for="javascript">Hard</label>
+      </div>
 
     </section>
 
-   <div>
-    <button id="start-button" type="button" disabled>Start Game</button>
-    <button id='gamebutton-higher'>Higher</button>
-    <button id='gamebutton-lower'>Lower</button>
-  </div>
-
     <section id="game-board">
-
-
+      <div class='play-buttons'>
+        <button id="start-button" type="button">Start Game</button>
+        <div id='highlower-buttons'>
+        <button id='gamebutton-higher'>Higher</button>
+        <button id='gamebutton-lower'>Lower</button>
+      </div>
+      </div>
+      <div id='random-number'></div>
     </section>
 
 
