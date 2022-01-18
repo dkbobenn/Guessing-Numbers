@@ -20,18 +20,16 @@ let highlowerButtons = document.getElementById("highlower-buttons");
 let introSection = document.getElementById("intro");
 let endGamepopup =  document.getElementById("end-game");
 
-gameBoard.hidden = true;
 
 levelEasyButton.onclick = () => {
 
-levelMediumButton.checked = false;
-levelHardButton.checked = false;
-  gameBoard.style.display = "block"; 
-  clearNumber.innerHTML = '';
-  correctAnswers = 0;
-  wrongAnswers = 0;
-
-    userInputMax = 50;
+   levelMediumButton.checked = false;
+   levelHardButton.checked = false;
+   gameBoard.style.display = "block"; 
+   clearNumber.innerHTML = '';
+   correctAnswers = 0;
+   wrongAnswers = 0;
+   userInputMax = 50;
 };
 
 levelMediumButton.onclick = () => {
@@ -42,8 +40,7 @@ levelMediumButton.onclick = () => {
   clearNumber.innerHTML = '';
   correctAnswers = 0;
   wrongAnswers = 0;
-
-    userInputMax = 25;
+  userInputMax = 25;
 };
 
  levelHardButton.onclick = () => {
@@ -54,7 +51,6 @@ levelMediumButton.onclick = () => {
   clearNumber.innerHTML = '';
   correctAnswers = 0;
   wrongAnswers = 0;
-
   userInputMax = 10; 
 };
 
@@ -71,23 +67,22 @@ levelMediumButton.onclick = () => {
 
  // Start the game 
  document.querySelector('#start-button').addEventListener('click', function () {
-   highlowerButtons.style.display = "block";
-   introSection.style.display = "none"; 
-   startButton.style.display = 'none'
-  const number = document.getElementById("random-number");
-  const span = document.createElement("span");
-  number.appendChild(span)
-  randomNumber = Math.floor(userInputMax / 2)
-  number.innerHTML = `<span id=number>${randomNumber}</span>`
+    highlowerButtons.style.display = "block";
+    introSection.style.display = "none"; 
+    startButton.style.display = 'none'
+    const number = document.getElementById("random-number");
+    const span = document.createElement("span");
+    number.appendChild(span)
+    randomNumber = Math.floor(userInputMax / 2)
+    number.innerHTML = `<span id=number>${randomNumber}</span>`
  });
 
 //Get the next number
  function writeNextNumber() {
-  prevNumber = randomNumber
-  
-  randomNumber = getRandomInt(userInputMin, userInputMax, prevNumber)
-  const newNumber = document.getElementById('number')
-  newNumber.innerHTML = `${randomNumber}`
+   prevNumber = randomNumber
+   randomNumber = getRandomInt(userInputMin, userInputMax, prevNumber)
+   const newNumber = document.getElementById('number')
+   newNumber.innerHTML = `${randomNumber}`
 }
 
   document.querySelector('#gamebutton-higher').addEventListener('click', function () {
@@ -124,10 +119,10 @@ levelMediumButton.onclick = () => {
 
 function calcScore(){
 switch (score) {
-  case true:
+    case true:
     correctAnswers += 1;
     break;
-  case false:
+    case false:
     wrongAnswers += 1;
     break;
 }
