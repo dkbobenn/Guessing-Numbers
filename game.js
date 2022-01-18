@@ -18,6 +18,7 @@ let gameBoard = document.getElementById("game-board");
 let clearNumber = document.getElementById("random-number");
 let highlowerButtons = document.getElementById("highlower-buttons");
 let introSection = document.getElementById("intro");
+let endGamepopup =  document.getElementById("end-game");
 
 gameBoard.hidden = true;
 
@@ -85,7 +86,7 @@ levelMediumButton.onclick = () => {
   prevNumber = randomNumber
   
   randomNumber = getRandomInt(userInputMin, userInputMax, prevNumber)
-  const newNumber = document.getElementById('random-number')
+  const newNumber = document.getElementById('number')
   newNumber.innerHTML = `${randomNumber}`
 }
 
@@ -141,20 +142,30 @@ function result(){
     result.innerHTML = 'YOU WON THE GAME'
     console.log('YOU WON THE GAME')
 
-    setTimeout(endGame, 1000);
+    setTimeout(endGame, 2000);
   }
    else if(wrongAnswers === 5){
     const result = document.getElementById('random-number')
-    result.innerHTML = 'YOU LOST'
+    result.innerHTML = 'YOU LOST THE GAME'
     console.log('YOU LOST')
 
-    setTimeout(endGame, 1000);
+    setTimeout(endGame, 2000);
   }
 }
 
 function endGame(){
+  endGamepopup.style.display = "block";
+  gameBoard.style.display = "none"; 
 
-alert(`You got ${correctAnswers} correct and ${wrongAnswers} wrong`);
+  const text = document.getElementById("endgame-text");
+  const addText = document.createTextNode(`Your score is ${correctAnswers} correct and ${wrongAnswers} wrong`)
+  text.appendChild(addText);
+  //const p = document.createElement("p");
+ // text.appendChild(p)
+  //text.innerHTML = `<p id=endgame-text>You got ${correctAnswers} correct <br> and ${wrongAnswers} wrong</p>
+
+}
+document.querySelector('#playagain-button').addEventListener('click', function () {
 document.location.reload();
 clearInterval(interval); // Needed for Chrome to end game
-}
+});
