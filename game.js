@@ -23,6 +23,7 @@ let = scoreTrackerCorrect = document.getElementById('score-correct-ans');
 let = scoreTrackerWrong = document.getElementById('score-wrong-anw');
 let = countNumberCorrect =  document.getElementById('score-correct-number');
 let = countNumberWrong = document.getElementById('score-wrong-number');
+let gameButtonHigher = document.getElementById('gamebutton-higher');
 
 //radio button selection for the easy level
 levelEasyButton.onclick = () => {
@@ -92,27 +93,22 @@ levelMediumButton.onclick = () => {
     const newNumber = document.getElementById('number')
     newNumber.innerHTML = `${randomNumber}`
 }
+
    //gamebutton for guessing on a higher number
   document.querySelector('#gamebutton-higher').addEventListener('click', function () {
     writeNextNumber();
-    console.log(prevNumber)
-    console.log(randomNumber)
-
     if(prevNumber < randomNumber){
       score = true;
      }
      else if(prevNumber > randomNumber){
        score = false;
      }
-    //console.log(score)
      calcScore()
   });
 
   //gamebutton for guessing on a lower number
   document.querySelector('#gamebutton-lower').addEventListener('click', function () {
     writeNextNumber()
-    //console.log(prevNumber)
-    //console.log(randomNumber)
     if(prevNumber < randomNumber){
       score = false;
      }
@@ -121,6 +117,32 @@ levelMediumButton.onclick = () => {
      }
      calcScore()
   });
+
+  //Guessing higher or lower with keyboard instead buttons. ArrowUp = higher & ArrowDown = lower
+  document.addEventListener('keydown', e => {
+    switch (e.keyCode) {
+      case 38:
+        writeNextNumber()
+        if(prevNumber < randomNumber){
+          score = true;
+         }
+         else if(prevNumber > randomNumber){
+           score = false;
+         }
+         calcScore()
+        break;
+      case 40:
+        writeNextNumber()
+        if(prevNumber < randomNumber){
+          score = false;
+         }
+         else if(prevNumber > randomNumber){
+           score = true;
+         }
+         calcScore()
+        break;
+      }
+    });
   
 //score is calculated here
 function calcScore(){
@@ -134,8 +156,6 @@ switch (score) {
 }
    countNumberCorrect.innerHTML = `${correctAnswers}`
    countNumberWrong.innerHTML = `${wrongAnswers}`
-   console.log(correctAnswers)
-   console.log(wrongAnswers)
    result()
 }
 
