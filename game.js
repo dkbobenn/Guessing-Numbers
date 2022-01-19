@@ -19,8 +19,10 @@ let clearNumber = document.getElementById("random-number");
 let highlowerButtons = document.getElementById("highlower-buttons");
 let introSection = document.getElementById("intro");
 let endGamepopup =  document.getElementById("end-game");
-let = scoreTrackerCorrect = document.getElementById('score-correct-ans')
-let = scoreTrackerWrong = document.getElementById('score-wrong-anw')
+let = scoreTrackerCorrect = document.getElementById('score-correct-ans');
+let = scoreTrackerWrong = document.getElementById('score-wrong-anw');
+let = countNumberCorrect =  document.getElementById('score-correct-number');
+let = countNumberWrong = document.getElementById('score-wrong-number');
 
 //radio button selection for the easy level
 levelEasyButton.onclick = () => {
@@ -102,23 +104,21 @@ levelMediumButton.onclick = () => {
      else if(prevNumber > randomNumber){
        score = false;
      }
-     console.log(score)
+    //console.log(score)
      calcScore()
   });
 
   //gamebutton for guessing on a lower number
   document.querySelector('#gamebutton-lower').addEventListener('click', function () {
     writeNextNumber()
-    console.log(prevNumber)
-    console.log(randomNumber)
-
+    //console.log(prevNumber)
+    //console.log(randomNumber)
     if(prevNumber < randomNumber){
       score = false;
      }
      else if(prevNumber > randomNumber){
        score = true;
      }
-     console.log(score)
      calcScore()
   });
   
@@ -132,6 +132,8 @@ switch (score) {
     wrongAnswers += 1;
     break;
 }
+   countNumberCorrect.innerHTML = `${correctAnswers}`
+   countNumberWrong.innerHTML = `${wrongAnswers}`
    console.log(correctAnswers)
    console.log(wrongAnswers)
    result()
