@@ -23,7 +23,6 @@ let = scoreTrackerCorrect = document.getElementById('score-correct-ans');
 let = scoreTrackerWrong = document.getElementById('score-wrong-anw');
 let = countNumberCorrect =  document.getElementById('score-correct-number');
 let = countNumberWrong = document.getElementById('score-wrong-number');
-let gameButtonHigher = document.getElementById('gamebutton-higher');
 
 //radio button selection for the easy level
 levelEasyButton.onclick = () => {
