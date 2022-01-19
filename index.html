@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <audio id='winner-audio' src="Audio\winner.mp3"></audio>
+    <audio id='loosing-audio' src="Audio\loosing.mp3"></audio>
     <link rel="stylesheet" href="style.css" />
     <title>Guessing Game</title>
   </head>
@@ -36,7 +38,7 @@
     <section id="game-board">
       <div class='play-buttons'>
         <button id="start-button" type="button">Start Game</button>
-        <div id='highlower-buttons'>
+        <div id='highlower-buttons' class="tooltip">
         <button id='gamebutton-higher'>Higher</button>
         <button id='gamebutton-lower'>Lower</button>
       </div>

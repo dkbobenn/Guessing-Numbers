@@ -1,7 +1,5 @@
 
 
-
-
 let userInputMin = 1; //lowest number, always 1 no matter the level selected
 let userInputMax = 0; //highest number, depending on the level selected by the user
 let correctAnswers = 0; //correct answers from user
@@ -91,7 +89,7 @@ levelMediumButton.onclick = () => {
     randomNumber = getRandomInt(userInputMin, userInputMax, prevNumber)
     const newNumber = document.getElementById('number')
     newNumber.innerHTML = `${randomNumber}`
-}
+};
 
    //gamebutton for guessing on a higher number
   document.querySelector('#gamebutton-higher').addEventListener('click', function () {
@@ -161,6 +159,8 @@ switch (score) {
 //result of the game - win or loose
 function result(){
 
+  const loosingAudio = document.getElementById('loosing-audio'); 
+   const winnerAudio = document.getElementById('winner-audio');
    const endGameText = document.getElementById("endgame-text");
    const endGameScore = document.getElementById("endgame-score");
    const addWinnerText = document.createTextNode(`YOU WON THE GAME`);
@@ -168,13 +168,15 @@ function result(){
    const addScore = document.createTextNode(`Your score is ${correctAnswers} correct and ${wrongAnswers} wrong`);
    
   if(correctAnswers === 5){
-    
+
+    winnerAudio.play()
     endGameText.appendChild(addWinnerText);
     endGameScore.appendChild(addScore);
     endGame()
   }
   else if(wrongAnswers === 5){
     
+    loosingAudio.play()
     endGameText.appendChild(addLooserText);
     endGameScore.appendChild(addScore);
     endGame()
