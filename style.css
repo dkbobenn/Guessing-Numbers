@@ -129,10 +129,17 @@ h2 {
   flex-direction: column;
   margin-top: 80px;
 }
-#score-tracker {
+#score-correct-ans {
   color: white;
   font-size: 35px;;
+ display: none;
 }
+#score-wrong-anw {
+  color: white;
+  font-size: 35px;;
+ display: none;
+}
+
 
 
 #end-game {
@@ -173,12 +180,24 @@ h2 {
 	text-shadow: 0 -1px 1px #000, 0 0px 5px rgba(0,0,0,.25);
 }
 
-#end-game p {
-	margin-top: 7px 0 25px;
+#endgame-text {
+	margin: 5px;
+  margin-top: 15px;
 	color: #ccc;
 	font-size:25px;
 	text-align:left;
 	text-shadow: 0 0px 5px rgba(0,0,0,.25), 0 -1px 1px #000;
+  display: flex;
+  justify-content: center;
+}
+
+#endgame-score {
+  text-align: center;
+	color: #ccc;
+	font-size:25px;
+	text-align:left;
+	text-shadow: 0 0px 5px rgba(0,0,0,.25), 0 -1px 1px #000;
+  margin-top: 10px;
 }
 
 .yes {
