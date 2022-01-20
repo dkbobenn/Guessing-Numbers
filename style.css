@@ -71,6 +71,7 @@ h2 {
 }
 #start-button {
   margin: 5px;
+  margin-left: 55px;
   font-size: 60px;
   background-color: #40e0d0;
   color: #fff;

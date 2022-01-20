@@ -22,6 +22,12 @@ let scoreTrackerWrong = document.getElementById('score-wrong-anw');
 let countNumberCorrect =  document.getElementById('score-correct-number');
 let countNumberWrong = document.getElementById('score-wrong-number');
 
+const loosingVideo = document.getElementById('loosing-video');
+const winningVideo = document.getElementById('winning-video');
+const loosingAudio = document.getElementById('loosing-audio'); 
+const winnerAudio = document.getElementById('winner-audio');
+const endGameText = document.getElementById("endgame-text");
+const endGameScore = document.getElementById("endgame-score");
 
 //radio button selection for the easy level
 levelEasyButton.onclick = () => {
@@ -159,12 +165,7 @@ switch (score) {
 
 //result of the game - win or loose
 function result(){
-   const loosingVideo = document.getElementById('loosing-video');
-   const winningVideo = document.getElementById('winning-video');
-   const loosingAudio = document.getElementById('loosing-audio'); 
-   const winnerAudio = document.getElementById('winner-audio');
-   const endGameText = document.getElementById("endgame-text");
-   const endGameScore = document.getElementById("endgame-score");
+  
    const addWinnerText = document.createTextNode(`YOU WON THE GAME`);
    const addLooserText = document.createTextNode(`YOU LOST THE GAME`)
    const addScore = document.createTextNode(`Your score is ${correctAnswers} correct and ${wrongAnswers} wrong`);
@@ -179,7 +180,7 @@ function result(){
     endGame()
   }
   else if(wrongAnswers === 5){
-    
+    console.log(loosingAudio, "inside else if in result")
     loosingAudio.play()
     loosingVideo.play()
     loosingVideo.style.display = 'block';
