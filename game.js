@@ -22,17 +22,6 @@ let scoreTrackerWrong = document.getElementById('score-wrong-anw');
 let countNumberCorrect =  document.getElementById('score-correct-number');
 let countNumberWrong = document.getElementById('score-wrong-number');
 
-// AUDIOS
-
-// let testAudio1 = new Audio(".\Audio\loosing.mp3")
-let testAudio2 = new Audio("./Audio/loosing.mp3")
-
-const loosingVideo = document.getElementById('loosing-video');
-const winningVideo = document.getElementById('winning-video');
-// const loosingAudio = document.getElementById('loosing-audio'); 
-// const winnerAudio = document.getElementById('winner-audio');
-const endGameText = document.getElementById("endgame-text");
-const endGameScore = document.getElementById("endgame-score");
 
 //radio button selection for the easy level
 levelEasyButton.onclick = () => {
@@ -170,26 +159,28 @@ switch (score) {
 
 //result of the game - win or loose
 function result(){
-  
+   const loosingVideo = document.getElementById('loosing-video');
+   const winningVideo = document.getElementById('winning-video');
+   const loosingAudio = document.getElementById('loosing-audio'); 
+   const winnerAudio = document.getElementById('winner-audio');
+   const endGameText = document.getElementById("endgame-text");
+   const endGameScore = document.getElementById("endgame-score");
    const addWinnerText = document.createTextNode(`YOU WON THE GAME`);
    const addLooserText = document.createTextNode(`YOU LOST THE GAME`)
    const addScore = document.createTextNode(`Your score is ${correctAnswers} correct and ${wrongAnswers} wrong`);
    
   if(correctAnswers === 5){
 
-    //winnerAudio.play()   
+    winnerAudio.play()
     winningVideo.play()
-    console.log("winningVideo", winningVideo)
-    console.log("sinning video play", winningVideo.play)
     winningVideo.style.display = 'block';
     endGameText.appendChild(addWinnerText);
     endGameScore.appendChild(addScore);
     endGame()
   }
   else if(wrongAnswers === 5){
-    console.log(testAudio2, "inside result, wrong answer")
-    testAudio2.play()
-    // loosingAudio.play()
+    
+    loosingAudio.play()
     loosingVideo.play()
     loosingVideo.style.display = 'block';
     endGameText.appendChild(addLooserText);
