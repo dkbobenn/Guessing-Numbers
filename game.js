@@ -24,13 +24,13 @@ let countNumberWrong = document.getElementById('score-wrong-number');
 
 // AUDIOS
 
-let testAudio1 = new Audio(".\Audio\loosing.mp3")
+// let testAudio1 = new Audio(".\Audio\loosing.mp3")
 let testAudio2 = new Audio("./Audio/loosing.mp3")
 
 const loosingVideo = document.getElementById('loosing-video');
 const winningVideo = document.getElementById('winning-video');
-const loosingAudio = document.getElementById('loosing-audio'); 
-const winnerAudio = document.getElementById('winner-audio');
+// const loosingAudio = document.getElementById('loosing-audio'); 
+// const winnerAudio = document.getElementById('winner-audio');
 const endGameText = document.getElementById("endgame-text");
 const endGameScore = document.getElementById("endgame-score");
 
@@ -177,9 +177,7 @@ function result(){
    
   if(correctAnswers === 5){
 
-    //winnerAudio.play()
-    console.log(testAudio1, "test audio 1 inside result, correct answer")
-    testAudio1.play()
+    //winnerAudio.play()   
     winningVideo.play()
     console.log("winningVideo", winningVideo)
     console.log("sinning video play", winningVideo.play)
