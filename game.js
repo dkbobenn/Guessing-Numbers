@@ -17,10 +17,11 @@ let clearNumber = document.getElementById("random-number");
 let highlowerButtons = document.getElementById("highlower-buttons");
 let introSection = document.getElementById("intro");
 let endGamepopup =  document.getElementById("end-game");
-let = scoreTrackerCorrect = document.getElementById('score-correct-ans');
-let = scoreTrackerWrong = document.getElementById('score-wrong-anw');
-let = countNumberCorrect =  document.getElementById('score-correct-number');
-let = countNumberWrong = document.getElementById('score-wrong-number');
+let scoreTrackerCorrect = document.getElementById('score-correct-ans');
+let scoreTrackerWrong = document.getElementById('score-wrong-anw');
+let countNumberCorrect =  document.getElementById('score-correct-number');
+let countNumberWrong = document.getElementById('score-wrong-number');
+
 
 //radio button selection for the easy level
 levelEasyButton.onclick = () => {
@@ -97,7 +98,7 @@ levelMediumButton.onclick = () => {
     if(prevNumber < randomNumber){
       score = true;
      }
-     else if(prevNumber > randomNumber){
+    else if(prevNumber > randomNumber){
        score = false;
      }
      calcScore()
@@ -109,7 +110,7 @@ levelMediumButton.onclick = () => {
     if(prevNumber < randomNumber){
       score = false;
      }
-     else if(prevNumber > randomNumber){
+    else if(prevNumber > randomNumber){
        score = true;
      }
      calcScore()
@@ -158,8 +159,9 @@ switch (score) {
 
 //result of the game - win or loose
 function result(){
-
-  const loosingAudio = document.getElementById('loosing-audio'); 
+   const loosingVideo = document.getElementById('loosing-video');
+   const winningVideo = document.getElementById('winning-video');
+   const loosingAudio = document.getElementById('loosing-audio'); 
    const winnerAudio = document.getElementById('winner-audio');
    const endGameText = document.getElementById("endgame-text");
    const endGameScore = document.getElementById("endgame-score");
@@ -170,6 +172,8 @@ function result(){
   if(correctAnswers === 5){
 
     winnerAudio.play()
+    winningVideo.play()
+    winningVideo.style.display = 'block';
     endGameText.appendChild(addWinnerText);
     endGameScore.appendChild(addScore);
     endGame()
@@ -177,6 +181,8 @@ function result(){
   else if(wrongAnswers === 5){
     
     loosingAudio.play()
+    loosingVideo.play()
+    loosingVideo.style.display = 'block';
     endGameText.appendChild(addLooserText);
     endGameScore.appendChild(addScore);
     endGame()
@@ -185,7 +191,8 @@ function result(){
  //ending the game by displaying the last html block
 function endGame(){
   endGamepopup.style.display = "block";
-  gameBoard.style.display = "none"; 
+  gameBoard.style.display = "none";
+
 }
 
 //if user presses the yes button in the pop up to continue playing, page will reload

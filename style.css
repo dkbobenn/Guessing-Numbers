@@ -18,8 +18,8 @@ h1 {
 }
 #intro {
   text-align: center;
-  
 }
+
 h2 {
  color: #40e0d0;
   font-size: 50px;
@@ -44,6 +44,10 @@ h2 {
   
   #intro-list {
     list-style: none;
+  }
+
+  #ranges > span {
+    margin-left: 60px;
   }
 
   #game-board {
@@ -262,32 +266,36 @@ a:active {
 	top:3px;
 }
 
+#ranges-span1 {
+  color: white;
+  font-size: 15px;
+  margin-left: 45px;
+}
+
+#ranges-span2 {
+  color: white;
+  font-size: 15px;
+  margin-left: 15px;
+}
+
+#ranges-span3 {
+  color: white;
+ margin-left: 45px;
+ font-size: 15px;
+}
+
+
 .radio-btn {
   display: flex;
   flex-direction: row;
   justify-content:space-around;
-  flex-wrap: wrap;
   margin-top: 10px;
   margin-bottom: 25px;
+  margin-left: 125px;
   font-size: 25px;
   color: white;
 }
 
-@keyframes click-wave {
-  0% {
-    height: 40px;
-    width: 40px;
-    opacity: 0.35;
-    position: relative;
-  }
-  100% {
-    height: 200px;
-    width: 200px;
-    margin-left: -80px;
-    margin-top: -80px;
-    opacity: 0;
-  }
-}
 
 .option-input {
   -webkit-appearance: none;
@@ -344,4 +352,20 @@ a:active {
 }
 .option-input.radio::after {
   border-radius: 50%;
+}
+#winning-video {
+  display: none;
+  margin-top: 40px;
+  width:100%;
+  height:100%;
+  padding:1.051%;
+  background-color:#666;
+}
+#loosing-video {
+  display: none;
+  margin-top: 40px;
+  width:100%;
+  height:100%;
+  padding:1.051%;
+  background-color:#666;
 }
