@@ -22,6 +22,10 @@ let scoreTrackerWrong = document.getElementById('score-wrong-anw');
 let countNumberCorrect =  document.getElementById('score-correct-number');
 let countNumberWrong = document.getElementById('score-wrong-number');
 
+// AUDIOS
+
+let testAudio = new Audio("Audio\loosing.mp3")
+
 const loosingVideo = document.getElementById('loosing-video');
 const winningVideo = document.getElementById('winning-video');
 const loosingAudio = document.getElementById('loosing-audio'); 
@@ -181,7 +185,8 @@ function result(){
   }
   else if(wrongAnswers === 5){
     console.log(loosingAudio, "inside else if in result")
-    loosingAudio.play()
+    testAudio.play()
+    // loosingAudio.play()
     loosingVideo.play()
     loosingVideo.style.display = 'block';
     endGameText.appendChild(addLooserText);
