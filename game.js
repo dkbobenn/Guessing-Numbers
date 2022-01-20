@@ -176,15 +176,19 @@ function result(){
    
   if(correctAnswers === 5){
 
-    winnerAudio.play()
+    //winnerAudio.play()
+    console.log(testAudio, "inside result, correct answer")
+    testAudio.play()
     winningVideo.play()
+    console.log("winningVideo", winningVideo)
+    console.log("sinning video play", winningVideo.play)
     winningVideo.style.display = 'block';
     endGameText.appendChild(addWinnerText);
     endGameScore.appendChild(addScore);
     endGame()
   }
   else if(wrongAnswers === 5){
-    console.log(loosingAudio, "inside else if in result")
+    console.log(testAudio, "inside result, wrong answer")
     testAudio.play()
     // loosingAudio.play()
     loosingVideo.play()
