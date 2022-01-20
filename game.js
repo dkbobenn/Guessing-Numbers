@@ -24,7 +24,8 @@ let countNumberWrong = document.getElementById('score-wrong-number');
 
 // AUDIOS
 
-let testAudio = new Audio("Audio\loosing.mp3")
+let testAudio1 = new Audio(".\Audio\loosing.mp3")
+let testAudio2 = new Audio("./Audio/loosing.mp3")
 
 const loosingVideo = document.getElementById('loosing-video');
 const winningVideo = document.getElementById('winning-video');
@@ -177,8 +178,8 @@ function result(){
   if(correctAnswers === 5){
 
     //winnerAudio.play()
-    console.log(testAudio, "inside result, correct answer")
-    testAudio.play()
+    console.log(testAudio1, "test audio 1 inside result, correct answer")
+    testAudio1.play()
     winningVideo.play()
     console.log("winningVideo", winningVideo)
     console.log("sinning video play", winningVideo.play)
@@ -188,8 +189,8 @@ function result(){
     endGame()
   }
   else if(wrongAnswers === 5){
-    console.log(testAudio, "inside result, wrong answer")
-    testAudio.play()
+    console.log(testAudio2, "inside result, wrong answer")
+    testAudio2.play()
     // loosingAudio.play()
     loosingVideo.play()
     loosingVideo.style.display = 'block';
