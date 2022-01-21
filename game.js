@@ -13,7 +13,6 @@ let levelMediumButton = document.getElementById('level-button2')
 let levelHardButton = document.getElementById('level-button3');
 let startButton = document.getElementById("start-button");
 let gameBoard = document.getElementById("game-board");
-let clearNumber = document.getElementById("random-number");
 let highlowerButtons = document.getElementById("highlower-buttons");
 let introSection = document.getElementById("intro");
 let endGamepopup =  document.getElementById("end-game");
@@ -23,13 +22,22 @@ let countNumberCorrect =  document.getElementById('score-correct-number');
 let countNumberWrong = document.getElementById('score-wrong-number');
 let showGameBoardInfo = document.getElementById('gameboard-info')
 
+const number = document.getElementById("random-number");
+const span = document.createElement("span");
+const loosingVideo = document.getElementById('loosing-video');
+const winningVideo = document.getElementById('winning-video');
+const loosingAudio = document.getElementById('loosing-audio'); 
+const winnerAudio = document.getElementById('winner-audio');
+const endGameText = document.getElementById("endgame-text");
+const endGameScore = document.getElementById("endgame-score");
+
 //radio button selection for the easy level
 levelEasyButton.onclick = () => {
 
    levelMediumButton.checked = false;
    levelHardButton.checked = false;
    gameBoard.style.display = "block"; 
-   clearNumber.innerHTML = '';
+   number.innerHTML = '';
    correctAnswers = 0;
    wrongAnswers = 0;
    userInputMax = 50;
@@ -41,7 +49,7 @@ levelMediumButton.onclick = () => {
   levelEasyButton.checked = false
   levelHardButton.checked = false
   gameBoard.style.display = "block"; 
-  clearNumber.innerHTML = '';
+  number.innerHTML = '';
   correctAnswers = 0;
   wrongAnswers = 0;
   userInputMax = 25;
@@ -53,7 +61,7 @@ levelMediumButton.onclick = () => {
   levelEasyButton.checked = false
   levelMediumButton.checked = false
   gameBoard.style.display = "block"; 
-  clearNumber.innerHTML = '';
+  number.innerHTML = '';
   correctAnswers = 0;
   wrongAnswers = 0;
   userInputMax = 10; 
@@ -79,8 +87,6 @@ levelMediumButton.onclick = () => {
 
     introSection.style.display = "none"; 
     startButton.style.display = 'none'
-    const number = document.getElementById("random-number");
-    const span = document.createElement("span");
     number.appendChild(span)
     randomNumber = Math.floor(userInputMax / 2)
     number.innerHTML = `<span id=number>${randomNumber}</span>`
@@ -161,12 +167,7 @@ switch (score) {
 
 //result of the game - win or loose
 function result(){
-   const loosingVideo = document.getElementById('loosing-video');
-   const winningVideo = document.getElementById('winning-video');
-   const loosingAudio = document.getElementById('loosing-audio'); 
-   const winnerAudio = document.getElementById('winner-audio');
-   const endGameText = document.getElementById("endgame-text");
-   const endGameScore = document.getElementById("endgame-score");
+  
    const addWinnerText = document.createTextNode(`YOU WON THE GAME`);
    const addLooserText = document.createTextNode(`YOU LOST THE GAME`)
    const addScore = document.createTextNode(`Your score is ${correctAnswers} correct and ${wrongAnswers} wrong`);
