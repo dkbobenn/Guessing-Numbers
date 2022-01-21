@@ -127,6 +127,20 @@ h2 {
 #highlower-buttons {
   display: none;
 }
+
+#gameboard-info {
+  position: absolute;
+  display: none;
+  color: white;
+  margin-top: 175px;
+  height: 25px;
+}
+#info-arrowup{
+  margin-left: 400px;
+}
+#info-arrowdown{
+margin-left: 120px;
+}
 .container {
   display: flex;
   flex-direction: row;

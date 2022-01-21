@@ -21,7 +21,7 @@ let scoreTrackerCorrect = document.getElementById('score-correct-ans');
 let scoreTrackerWrong = document.getElementById('score-wrong-anw');
 let countNumberCorrect =  document.getElementById('score-correct-number');
 let countNumberWrong = document.getElementById('score-wrong-number');
-
+let showGameBoardInfo = document.getElementById('gameboard-info')
 
 //radio button selection for the easy level
 levelEasyButton.onclick = () => {
@@ -75,6 +75,8 @@ levelMediumButton.onclick = () => {
     highlowerButtons.style.display = "block";
     scoreTrackerCorrect.style.display = 'block';
     scoreTrackerWrong.style.display = 'block';
+    showGameBoardInfo.style.display = 'block';
+
     introSection.style.display = "none"; 
     startButton.style.display = 'none'
     const number = document.getElementById("random-number");
