@@ -141,7 +141,29 @@ h2 {
 #info-arrowdown{
 margin-left: 120px;
 }
+#lamps {
+  display: none ;
+  width: 80px;
+  position: absolute;
+  top: 350px;;
+  right: 1300px;
+  height: 200px;
+}
+#green-lamp {
+  background: #add8e6;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+#red-lamp {
+  background: lightblue;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+ margin-top: 60px ;
+}
 .container {
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -162,8 +184,6 @@ margin-left: 120px;
   font-size: 35px;;
  display: none;
 }
-
-
 
 #end-game {
   display: none;

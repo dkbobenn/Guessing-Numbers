@@ -30,6 +30,9 @@ const loosingAudio = document.getElementById('loosing-audio');
 const winnerAudio = document.getElementById('winner-audio');
 const endGameText = document.getElementById("endgame-text");
 const endGameScore = document.getElementById("endgame-score");
+const lamps = document.getElementById('lamps');
+const greenLamp = document.getElementById('green-lamp');
+const redLamp = document.getElementById('red-lamp');
 
 //radio button selection for the easy level
 levelEasyButton.onclick = () => {
@@ -84,6 +87,7 @@ levelMediumButton.onclick = () => {
     scoreTrackerCorrect.style.display = 'block';
     scoreTrackerWrong.style.display = 'block';
     showGameBoardInfo.style.display = 'block';
+    lamps.style.display = 'block'
 
     introSection.style.display = "none"; 
     startButton.style.display = 'none'
@@ -155,9 +159,17 @@ function calcScore(){
 switch (score) {
     case true:
     correctAnswers += 1;
+    greenLamp.style.background = "green";
+    setTimeout(function() {
+      greenLamp.style.background = '#add8e6'; 
+    }, 500);
     break;
     case false:
     wrongAnswers += 1;
+    redLamp.style.background = "red";
+    setTimeout(function() {
+    redLamp.style.background = '#add8e6'; 
+    }, 500);
     break;
 }
    countNumberCorrect.innerHTML = `${correctAnswers}`
