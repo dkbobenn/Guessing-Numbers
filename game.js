@@ -162,14 +162,14 @@ switch (score) {
     greenLamp.style.background = "green";
     setTimeout(function() {
       greenLamp.style.background = '#add8e6'; 
-    }, 500);
+    }, 600);
     break;
     case false:
     wrongAnswers += 1;
     redLamp.style.background = "red";
     setTimeout(function() {
     redLamp.style.background = '#add8e6'; 
-    }, 500);
+    }, 600);
     break;
 }
    countNumberCorrect.innerHTML = `${correctAnswers}`
