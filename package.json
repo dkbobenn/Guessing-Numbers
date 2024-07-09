@@ -1,11 +1,11 @@
 {
   "name": "guessing-numbers",
   "version": "1.0.0",
-  "description": "This is a game, where you need to guess if the next random number will be higher or lower than the current number. If you guess 5 correct you will win, and if you guess 5 wrong you loose. \r ## Instructions\r There is 3 levels - easy, medium and hard. Every level has an individual number range. Easy has a number range from 1 - 50, medium from 1 - 25, and hard from 1 - 10. \r The idea is, that the smaller the number range, the harder it is to guess correct.\r This game was developed as a project delivery in a course, where we should use javascript, html and CSS.\r ## Setup\r You can see the game in your browser here:\r https://dkbobenn.github.io/Guessing-Numbers/\r ## Team\r Bo Bennetsen:\r (https://github.com/dkbobenn).",
+  "description": "A game where you guess if the next random number will be higher or lower. Win by guessing 5 correctly or lose by guessing 5 wrong. Features three levels of difficulty.",
   "main": "game.js",
   "scripts": {
-    "test": "\"echo \\\"Error: no test specified\\\" && exit 1\""
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "\u001b[A\u001b[A\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C{}\u001b[D",
+  "author": "Bo Bennetsen (https://github.com/dkbobenn)",
   "license": "ISC"
 }
