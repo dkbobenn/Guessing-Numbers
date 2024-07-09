@@ -7,7 +7,7 @@ updates:
     # Check the npm registry for updates every day (weekdays)
     schedule:
       interval: "daily"
-      commit-message:
+    commit-message:
       prefix: 'dependabot'
     pull-request-branch-name:
       separator: '-'
